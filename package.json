@@ -1,0 +1,8 @@
+{
+  "name": "city-pulse",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "common"
+  ]
+}
