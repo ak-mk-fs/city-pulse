@@ -23,7 +23,7 @@ const Home: React.FC = () => {
         city={city}
         setCity={setCity}
       />
-      <EventsList events={events} loading={loading} error={error} />
+      <EventsList events={events ?? []} loading={loading} error={error ?? ""} />
     </div>
   );
 };

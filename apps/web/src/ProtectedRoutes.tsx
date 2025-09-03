@@ -13,11 +13,11 @@ const ProtectedRoutes: React.FC = () => {
     <ProtectedRoute>
       <Header />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/events" element={<Home />} />
         <Route path="/events/:id" element={<EventDetails />} />
         <Route path="/profile" element={<Profile />} />
         {/* Redirect any unknown path to /home */}
-        <Route path="*" element={<Navigate to="/home" replace />} />
+        <Route path="*" element={<Navigate to="/events" replace />} />
       </Routes>
     </ProtectedRoute>
   );

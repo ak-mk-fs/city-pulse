@@ -1,11 +1,12 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLanguage } from "@common/hooks/useLanguage";
+import { useTranslation } from "react-i18next";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const { lang, toggleLang } = useLanguage();
-
+  const { t } = useTranslation();
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -17,17 +18,18 @@ const Header: React.FC = () => {
       justifyContent: "space-between",
       alignItems: "center",
       padding: "1rem 2rem",
-      backgroundColor: "#f0f0f0"
+      backgroundColor: "#f0f0f0",
+      width: "100%",
     }}>
       <nav>
-        <Link to="/home" style={{ marginRight: 15 }}>Home</Link>
-        <Link to="/profile">Profile</Link>
+        <Link to="/home" style={{ marginRight: 15 }}>{t("home.title")}</Link>
+        <Link to="/profile">{t("profile.title")}</Link>
       </nav>
       <div>
         <button onClick={toggleLang} style={{ marginRight: 15 }}>
-          {lang === "en" ? "AR" : "EN"}
+         {lang === "en" ? t("language_toggle.switch_to_ar") : t("language_toggle.switch_to_en")}
         </button>
-        <button onClick={handleLogout}>Logout</button>
+        <button onClick={handleLogout}>{t("logout")}</button>
       </div>
     </header>
   );

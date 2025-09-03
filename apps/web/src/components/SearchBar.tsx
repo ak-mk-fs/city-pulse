@@ -1,6 +1,6 @@
 import React from "react";
 import { useLanguage } from "@common/hooks/useLanguage";
-
+import { useTranslation } from "react-i18next";
 interface Props {
   keyword: string;
   setKeyword: (val: string) => void;
@@ -9,16 +9,13 @@ interface Props {
 }
 
 const SearchBar: React.FC<Props> = ({ keyword, setKeyword, city, setCity }) => {
-  const { lang, toggleLang } = useLanguage();
-
+  const { lang } = useLanguage();
+  const { t } = useTranslation();
   return (
     <div style={{ marginBottom: "1rem", display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-      <button onClick={toggleLang}>
-        {lang === "en" ? "Switch to Arabic" : "Switch to English"}
-      </button>
       <input
         type="text"
-        placeholder={lang === "en" ? "Search keyword" : "بحث بالكلمة"}
+        placeholder={t("home.search_placeholder")}
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
       />

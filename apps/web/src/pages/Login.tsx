@@ -3,19 +3,16 @@ import { useNavigate } from "react-router-dom";
 import AuthForm from "../components/Form";
 import { useApi } from "@common/hooks/useApi";
 import { login } from "@common/services/auth";
-export interface LoginData {
-  email: string;
-  password: string;
-}
+import type { LoginData } from "../types";
+
 const Login: React.FC = () => {
   const navigate = useNavigate();
-  const { data, loading, error, execute } = useApi(login, [], false); // manual execution
+  const { data, loading, error, execute } = useApi(login, [], false);
 
   const handleSubmit = async (userData: LoginData) => {
     try {
-    const result = await execute(userData); // wait for login to finish
+    await execute(userData); // wait for login to finish
     localStorage.setItem("userEmail", userData.email);
-    alert(`Logged in as ${result.user.firstName} ${result.user.lastName}`);
     navigate("/home");
   } catch (err) {
     // error is already set in useApi, optional extra handling

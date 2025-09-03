@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-interface UserData {
-  email: string;
-  password: string;
-  firstName?: string;
-  lastName?: string;
-}
+import type { UserData } from "../types";
 interface AuthFormProps {
   onSubmit: (data: UserData) => void;
   submitLabel: string;
@@ -75,7 +70,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onSubmit, submitLabel, isRegister, 
         />
       </div>
       <button type="submit">{submitLabel}</button>
-      {!isRegister && <button type="button" onClick={handleRegister}>Register</button>}
+      {!isRegister ? <button type="button" onClick={handleRegister}>Register</button> : <button type="button" onClick={handleRegister}>Back to Login</button>}
 
     </form>
   );

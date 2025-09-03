@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import type { RegisterData } from "./Register";
+import type { UserData } from "../types";
 
 const Profile:React.FC = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const Profile:React.FC = () => {
   // Retrieve the current user from login mock (optional)
   const storedUsers = localStorage.getItem("mockUsers");
   const users = storedUsers ? JSON.parse(storedUsers) : [];
-  const user = users.find((u: RegisterData) => u.email === email); // token exists, take first logged-in user for mock
+  const user = users.find((u: UserData) => u.email === email); // token exists, take first logged-in user for mock
 
   const handleLogout = () => {
     localStorage.removeItem("token");

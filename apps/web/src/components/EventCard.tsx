@@ -1,25 +1,29 @@
 import React, { useState } from "react";
 import type { Event } from "@common/services/api";
-import { useLanguage } from "@common/hooks/useLanguage";
-
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 interface Props {
   event: Event;
 }
 
 const EventCard: React.FC<Props> = ({ event }) => {
-  const { lang } = useLanguage();
   const [favourite, setFavourite] = useState(false);
-
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+  
+  const goToDetails = () => {
+    navigate(`/events/${event?.id}`);
+  };
   return (
-    <div style={{ border: "1px solid #ccc", padding: "0.5rem", borderRadius: "8px" }}>
+    <div onClick={goToDetails} style={{ border: "1px solid #ccc", padding: "0.5rem", borderRadius: "8px" }}>
       <h3>{event.name}</h3>
       <p>
-        {lang === "en" ? "Date" : "التاريخ"}: {event.dates.start.localDate}{" "}
+        {t("event_details.date")}: {event.dates.start.localDate}{" "}
         {event.dates.start.localTime && `at ${event.dates.start.localTime}`}
       </p>
-      {event._embedded?.venues[0] && (
+      {event?._embedded?.venues && event?._embedded?.venues[0] && (
         <p>
-          {lang === "en" ? "Venue" : "المكان"}: {event._embedded?.venues[0]?.name},{" "}
+          {t("event_details.venue")}: {event._embedded?.venues[0]?.name},{" "}
           {event._embedded.venues[0]?.city?.name}
         </p>
       )}
@@ -27,7 +31,7 @@ const EventCard: React.FC<Props> = ({ event }) => {
         <img src={event.images[0].url} alt={event.name} style={{ width: "100%", borderRadius: "4px" }} />
       )}
       <button onClick={() => setFavourite(!favourite)}>
-        {favourite ? (lang === "en" ? "Unfavourite" : "إزالة من المفضلة") : (lang === "en" ? "Favourite" : "أضف للمفضلة")}
+        {favourite ? t("favourites.unfavourite") : t("favourites.favourite")}
       </button>
     </div>
   );

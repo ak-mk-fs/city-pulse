@@ -1,0 +1,36 @@
+{
+  "home": {
+    "title": "Home",
+    "search_placeholder": "Search Events by keywords...",
+    "city_placeholder": "Search by city..."
+  },
+  "profile": {
+    "title": "Profile",
+    "logout": "Logout"
+  },
+  "event_details": {
+    "date": "Date",
+    "venue": "Venue",
+    "description": "Description",
+    "back": "Back to Events"
+  },
+  "favourites": {
+    "title": "Favourites",
+    "unfavourite": "Unfavourite",
+    "favourite": "Favourite",
+    "no_favourites": "No favourite events yet."
+  },
+    "language_toggle": {
+        "switch_to_ar": "Switch to Arabic",
+        "switch_to_en": "Switch to English"
+    },
+    "errors": {
+        "fetch_failed": "Failed to fetch events. Please try again later.",
+        "no_events": "No events found.",
+        "event_not_found": "Event not found.",
+        "invalid_event_id": "Invalid event ID.",
+        "network_error": "Network error. Please check your connection.",
+        "something_went_wrong": "Something went wrong. Please try again."
+    },
+    "logout": "Logout"
+}
