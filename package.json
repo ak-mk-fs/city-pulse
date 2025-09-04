@@ -4,12 +4,5 @@
   "workspaces": [
     "apps/web",
     "common"
-  ],
-  "dependencies": {
-    "dayjs": "^1.11.18",
-    "lodash": "^4.17.21"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.17.20"
-  }
+  ]
 }
