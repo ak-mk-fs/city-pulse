@@ -6,12 +6,13 @@ interface Props {
   events?: Event[];
   loading: boolean;
   error?: string;
+  emptyMsg?: string;
 }
 
-const EventsList: React.FC<Props> = ({ events, loading, error }) => {
+const EventsList: React.FC<Props> = ({ events, loading, error, emptyMsg }) => {
   if (loading) return <p>Loading events...</p>;
   if (error) return <p>Error: {error || "Something went wrong"}</p>;
-  if (!events || events.length === 0) return <p>No events found.</p>;
+  if (!events || events.length === 0) return <p>{emptyMsg} || No events found.</p>;
 
   return (
     <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill,minmax(290px,1fr))" }}>
