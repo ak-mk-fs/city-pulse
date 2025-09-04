@@ -74,7 +74,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onSubmit, submitLabel, isRegister, 
           style={{ width: "100%", padding: "0.5rem" }}
         />
       </div>
-      {!isRegister ? <button type="button" onClick={handleRegister}>Register</button> : <Link to={"/login"}><button type="button" onClick={handleRegister}>Back to Login</button></Link>}
+      {!isRegister ? <button style={{marginRight: 16}} type="button" onClick={handleRegister}>Register</button> : <Link to={"/login"} style={{marginRight: 16}}><button type="button" onClick={handleRegister}>Back to Login</button></Link>}
       <button type="submit">{submitLabel}</button>
 
     </form>

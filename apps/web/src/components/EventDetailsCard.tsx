@@ -13,8 +13,8 @@ const EventDetailCard: React.FC<Props> = ({ event }) => {
   const { t } = useTranslation();
   const { toggleFavourite, isFavourite } = useFavourites();
   const venue = event?._embedded?.venues?.[0];
-  const attraction = event?._embedded?.attractions?.[0];
-  const image = event.images?.find(img => img.ratio === "16_9");
+  const attraction =  event?._embedded?.attractions?.[0];
+  const image = event.images?.find(img => img?.ratio === "16_9");
   const seatmap = event.seatmap?.staticUrl;
 
   return (

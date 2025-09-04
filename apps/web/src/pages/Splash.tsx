@@ -26,8 +26,8 @@ const SplashScreen: React.FC = () => {
       height: "100vh",
       backgroundColor: "#f8f9fa"
     }}>
-      <img src="/logo.png" alt="App Logo" style={{ width: 120, marginBottom: 20 }} />
-      <h1>EventFinder</h1>
+      {/* <img src="/logo.png" alt="App Logo" style={{ width: 120, marginBottom: 20 }} /> */}
+      <h1>City Pulse</h1>
       <div className="spinner" style={{
         border: "4px solid #f3f3f3",
         borderTop: "4px solid #3498db",
