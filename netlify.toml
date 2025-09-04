@@ -1,0 +1,8 @@
+[build]
+  base = "apps/web"                  # Path to your frontend
+  publish = "apps/web/dist"          # Vite outputs to `dist`
+  command = "npm install && npm run build"
+
+[dev]
+  framework = "vite"
+  port = 5173
