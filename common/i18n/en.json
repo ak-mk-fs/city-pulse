@@ -2,7 +2,8 @@
   "home": {
     "title": "Home",
     "search_placeholder": "Search Events by keywords...",
-    "city_placeholder": "Search by city..."
+    "city_placeholder": "Search by city...",
+    "city": "City"
   },
   "profile": {
     "title": "Profile",
@@ -16,8 +17,8 @@
   },
   "favourites": {
     "title": "Favourites",
-    "unfavourite": "Unfavourite",
-    "favourite": "Favourite",
+    "unfavourite": "Remove Favourites",
+    "favourite": "Add to Favourites",
     "no_favourites": "No favourite events yet."
   },
     "language_toggle": {

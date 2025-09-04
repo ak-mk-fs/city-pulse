@@ -9,7 +9,7 @@ const SplashScreen: React.FC = () => {
     const timer = setTimeout(() => {
       setShow(false);
       const token = localStorage.getItem("token");
-      navigate(token ? "/home" : "/login");
+      navigate(token ? "/events" : "/login");
     }, 2000); // show splash for 2 seconds
 
     return () => clearTimeout(timer);

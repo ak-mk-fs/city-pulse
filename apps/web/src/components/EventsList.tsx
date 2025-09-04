@@ -14,7 +14,7 @@ const EventsList: React.FC<Props> = ({ events, loading, error }) => {
   if (!events || events.length === 0) return <p>No events found.</p>;
 
   return (
-    <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill,minmax(250px,1fr))" }}>
+    <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill,minmax(290px,1fr))" }}>
       {events.map((event) => (
         <EventCard key={event.id} event={event} />
       ))}

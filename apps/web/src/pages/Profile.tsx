@@ -2,36 +2,59 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import type { UserData } from "../types";
 
-const Profile:React.FC = () => {
+const Profile: React.FC = () => {
   const navigate = useNavigate();
   const email = localStorage.getItem("userEmail");
 
   // Retrieve the current user from login mock (optional)
   const storedUsers = localStorage.getItem("mockUsers");
   const users = storedUsers ? JSON.parse(storedUsers) : [];
-  const user = users.find((u: UserData) => u.email === email); // token exists, take first logged-in user for mock
+  const user = users.find((u: UserData) => u.email === email);
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userEmail");
-    navigate("/login");
+    ["token", "userEmail", "favourites", "events_data"].forEach(key =>
+    localStorage.removeItem(key)
+  );
+  navigate("/login", { replace: true });
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2>Profile</h2>
-      {user ? (
-        <div>
-          <p><strong>First Name:</strong> {user.firstName}</p>
-          <p><strong>Last Name:</strong> {user.lastName}</p>
-          <p><strong>Email:</strong> {user.email}</p>
-        </div>
-      ) : (
-        <p>No user info available.</p>
-      )}
-      <button onClick={handleLogout} style={{ marginTop: "1rem" }}>
-        Logout
-      </button>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "80vh",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "400px",
+          width: "100%",
+          padding: "2rem",
+          borderRadius: "12px",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+          background: "#fff",
+          textAlign: "center",
+        }}
+      >
+        <h2 style={{ marginBottom: "1.5rem" }}>Profile</h2>
+        {user ? (
+          <div>
+            <p>
+              <strong>First Name:</strong> {user.firstName}
+            </p>
+            <p>
+              <strong>Last Name:</strong> {user.lastName}
+            </p>
+            <p>
+              <strong>Email:</strong> {user.email}
+            </p>
+          </div>
+        ) : (
+          <p>No user info available.</p>
+        )}
+      </div>
     </div>
   );
 };

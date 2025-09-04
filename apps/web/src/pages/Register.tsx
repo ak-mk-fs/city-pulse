@@ -19,7 +19,7 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="register-wrapper">
       <h2>Register</h2>
       <AuthForm onSubmit={handleSubmit} submitLabel="Register" isRegister />
       {loading && <p>Creating account...</p>}

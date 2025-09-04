@@ -25,7 +25,7 @@ const Login: React.FC = () => {
   }
   return (
     <div className="login-wrapper">
-      <h2>Login</h2>
+      <h2>Login to City Pulse</h2>
       <AuthForm onSubmit={handleSubmit} submitLabel="Login"  handleRegister={handleRegister} />
       {loading && <p>Logging in...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}

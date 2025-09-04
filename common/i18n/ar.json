@@ -1,7 +1,9 @@
 {
   "home": {
     "title": "الرئيسية",
-    "search_placeholder": "ابحث عن الأحداث بالكلمات..."
+    "search_placeholder": "ابحث عن الأحداث بالكلمات...",
+    "city_placeholder": "ابحث بالمدينة...",
+    "city": "المدينة"
   },
   "profile": {
     "title": "الملف الشخصي",

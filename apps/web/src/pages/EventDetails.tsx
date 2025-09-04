@@ -20,7 +20,7 @@ const EventDetails: React.FC = () => {
   if (!event) return <p>No event found.</p>;
 
   return (
-    <div>
+    <div style={{ margin: "2em auto" }} className="home-wrapper">
       <button
         onClick={() => navigate("/events")}
         style={{ marginBottom: "1rem" }}

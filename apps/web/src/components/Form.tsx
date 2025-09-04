@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import type { UserData } from "../types";
 interface AuthFormProps {
   onSubmit: (data: UserData) => void;
@@ -27,6 +28,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onSubmit, submitLabel, isRegister, 
             <label>First Name</label>
             <input
               type="text"
+              className="input-field"
               name="firstName"
               value={userData.firstName || ""}
               onChange={handleChange}
@@ -39,6 +41,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onSubmit, submitLabel, isRegister, 
             <input
               type="text"
               name="lastName"
+              className="input-field"
               value={userData.lastName || ""}
               onChange={handleChange}
               required
@@ -52,6 +55,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ onSubmit, submitLabel, isRegister, 
         <input
           type="email"
           name="email"
+          className="input-field"
           value={userData.email}
           onChange={handleChange}
           required
@@ -63,14 +67,15 @@ const AuthForm: React.FC<AuthFormProps> = ({ onSubmit, submitLabel, isRegister, 
         <input
           type="password"
           name="password"
+          className="input-field"
           value={userData.password}
           onChange={handleChange}
           required
           style={{ width: "100%", padding: "0.5rem" }}
         />
       </div>
+      {!isRegister ? <button type="button" onClick={handleRegister}>Register</button> : <Link to={"/login"}><button type="button" onClick={handleRegister}>Back to Login</button></Link>}
       <button type="submit">{submitLabel}</button>
-      {!isRegister ? <button type="button" onClick={handleRegister}>Register</button> : <button type="button" onClick={handleRegister}>Back to Login</button>}
 
     </form>
   );

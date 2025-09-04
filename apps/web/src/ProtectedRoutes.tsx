@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import EventDetails from "./pages/EventDetails";
 import Profile from "./pages/Profile";
 import type{ ReactNode } from "react";
+import Favourites from "./pages/FavouriteEvents";
 
 interface ProtectedRouteProps {
   children: ReactNode;
@@ -16,6 +17,7 @@ const ProtectedRoutes: React.FC = () => {
         <Route path="/events" element={<Home />} />
         <Route path="/events/:id" element={<EventDetails />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/favourites" element={<Favourites />} />
         {/* Redirect any unknown path to /home */}
         <Route path="*" element={<Navigate to="/events" replace />} />
       </Routes>

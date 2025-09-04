@@ -22,14 +22,15 @@ const Header: React.FC = () => {
       width: "100%",
     }}>
       <nav>
-        <Link to="/home" style={{ marginRight: 15 }}>{t("home.title")}</Link>
-        <Link to="/profile">{t("profile.title")}</Link>
+        <Link to="/home" style={{ marginRight: 15, marginLeft: 33 }}>{t("home.title")}</Link>
+        <Link to="/favourites" style={{ marginLeft: 15 }}>{t("favourites.title")}</Link>
       </nav>
-      <div>
+      <div style={{marginRight: 60}}>
+        <Link to="/profile" style={{ marginRight: 15 }}>{t("profile.title")}</Link>
         <button onClick={toggleLang} style={{ marginRight: 15 }}>
          {lang === "en" ? t("language_toggle.switch_to_ar") : t("language_toggle.switch_to_en")}
         </button>
-        <button onClick={handleLogout}>{t("logout")}</button>
+        <button onClick={handleLogout} style={{marginRight: 30}}>{t("logout")}</button>
       </div>
     </header>
   );
