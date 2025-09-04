@@ -1,7 +1,15 @@
 # 🎟️ City Pulse
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://city-pulse-ak.netlify.app/)
+
 A **React + TypeScript** project built with **Vite** that integrates with the **Ticketmaster Discovery API** to list events, show details, manage favourites, and handle mock authentication.  
 This project is a demo with some simplified assumptions to speed up development.
+
+---
+
+## 🌐 Live Demo
+
+Check out the live deployed application here: [City Pulse Live](https://city-pulse-ak.netlify.app/)
 
 ---
 
@@ -9,7 +17,7 @@ This project is a demo with some simplified assumptions to speed up development.
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/ak-mk-fs/city-pulse.git
 cd city-pulse
 ```
 
@@ -29,6 +37,7 @@ npm install
 Create a `.env` file inside `apps/web` with:
 
 ```env
+VITE_API_BASE_URL=your_api_base_url
 VITE_TICKETMASTER_API_KEY=your_ticketmaster_api_key_here
 VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
 ```
@@ -112,3 +121,4 @@ city-pulse/
 
 ## 📜 License
 MIT License
+
